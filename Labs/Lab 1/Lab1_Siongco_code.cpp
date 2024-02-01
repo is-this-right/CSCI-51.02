@@ -3,9 +3,31 @@
 #include <string>
 using namespace std;
 
+void censor(string str);
+
+string hashtaginator(string in);
+
+void caesar_cypher(char* name);
+
+int main(void) {
+    string user_name;
+    cout << "1.";
+    getline(cin, user_name);
+    cout << "2." << user_name << endl;
+    cout << "3.";
+    censor(user_name);
+    cout << endl;
+    for (int i = 0; i < user_name.length(); i++)
+    {
+        caesar_cypher(&user_name[i]);
+    }
+    cout << "4." << user_name;
+}
+
 void censor(string str){
     cout << str[0];
-    for (int i = 1; i < str.length(); i++){
+    int len = str.length();
+    for (int i = 1; i < len; i++){
         cout << "#";
     }
 }
@@ -32,19 +54,4 @@ void caesar_cypher(char* name){
     } else if (*name == 122){
         *name = 97;
     }
-}
-
-int main(void) {
-    string user_name;
-    cout << "1.";
-    cin >> user_name;
-    cout << "2." << user_name << endl;
-    cout << "3.";
-    cout << hashtaginator(user_name) << endl;
-    // censor(user_name) << endl;
-    for (int i = 0; i < user_name.length(); i++)
-    {
-        caesar_cypher(&user_name[i]);
-    }
-    cout << "4." << user_name;
 }

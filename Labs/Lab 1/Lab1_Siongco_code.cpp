@@ -5,7 +5,6 @@ using namespace std;
 
 void censor(string str);
 
-string hashtaginator(string in);
 
 void caesar_cypher(char* name);
 
@@ -32,19 +31,6 @@ void censor(string str){
     }
 }
 
-string hashtaginator(string in){
-    string out;
-    if (in.length() > 0){
-        
-        out += in[0];
-        int reps = in.length() - 1;
-        if (reps > 0){
-            char character = '#';
-            out.append(reps, character);
-        }
-    }
-    return out;
-}
 
 void caesar_cypher(char* name){
     if ( ((*name >= 97 ) && (*name < 122)) || ( (*name >= 65) && (*name < 90) ) ){

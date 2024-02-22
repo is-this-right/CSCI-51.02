@@ -143,13 +143,7 @@ struct IntStack{
 };
 
 int main(void){
-    IntStack stack = IntStack(234567);
+    IntStack stack = IntStack(1);
     stack.peek();
-    cout << stack.getSize() << endl << endl;
-    stack.push(87);
-    stack.peek();
-    cout << stack.getSize() << endl << endl;
-    stack.push(82);
-    stack.peek();
-    cout << stack.getSize() << endl;
+    cout << stack.pop() << endl;
 }

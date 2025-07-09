@@ -1,0 +1,49 @@
+cppAssembler1.S
+.section __TEXT,__text,regular,pure_instructions
+.build_version macos, 13, 0 sdk_version 13, 3
+.globl __Z5dummyiii                    ; -- Begin function _Z5dummyiii
+.p2align 2
+__Z5dummyiii:                           ; @_Z5dummyiii
+.cfi_startproc
+; %bb.0:
+sub sp, sp, #32
+.cfi_def_cfa_offset 32
+str w0, [sp, #28]
+str w1, [sp, #24]
+str w2, [sp, #20]
+ldr w8, [sp, #28]
+ldr w9, [sp, #24]
+add w8, w8, w9
+str w8, [sp, #16]
+ldr w8, [sp, #28]
+ldr w9, [sp, #20]
+add w8, w8, w9
+str w8, [sp, #12]
+ldr w8, [sp, #16]
+ldr w9, [sp, #12]
+add w0, w8, w9
+add sp, sp, #32
+ret
+.cfi_endproc
+                                        ; -- End function
+.subsections_via_symbols
+
+
+
+
+I did not get the same notation as that from the previous slide. Instead, I had sp, and wn (where n is an integer). According to Wolchok (2021), "sp" refers to the stack pointer. "wn" refers to the registers.
+
+"wn" stood in place of rbp, rsp, edi, esi, eds, edx, and eax. Using the screenshots as reference, the % symbol appears only beside these registers. According to Harvard's CS 61 2018 course (2018), "rbp" refers to the base pointer. Moreover, the base pointer points at the "base" or at the lowest frame of the stack (Harvard, 2018). Therefore, the rbp is used as a point of reference for other registers (Tutorialspoint, n.d.).
+
+The "rsp" is the stack pointer
+
+
+
+
+References:
+
+Wolchok, S. (2021). How to Read ARM64 Assembly Language. https://wolchok.org/posts/how-to-read-arm64-assembly-language/
+
+Harvard. (2018). CS 61 2018. Assembly 1: Basics. https://cs61.seas.harvard.edu/site/2018/Asm1/
+
+Tutorialspoint. (n.d.). Assembly - Registers. https://www.tutorialspoint.com/assembly_programming/assembly_registers.htm
